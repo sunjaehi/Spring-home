@@ -2,6 +2,7 @@ package springboot.start;
 
 import springboot.start.discount.DiscountPolicy;
 import springboot.start.discount.FixDiscountPolicy;
+import springboot.start.discount.RateDiscountPolicy;
 import springboot.start.member.MemberRepository;
 import springboot.start.member.MemberService;
 import springboot.start.member.MemberServiceImpl;
@@ -25,6 +26,6 @@ public class AppConfig {
         return new OrderServiceImpl(memberRepository(),discountPolicy());
     }
     public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 }
